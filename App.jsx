@@ -222,7 +222,7 @@ const CREST_PNG = {
   TOT: "data:image/png;base64,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",
 };
 
-const CREST_DIR = "/crests-v12";
+const CREST_DIR = "/crests-v13";
 const BADGE_PATHS = [
   /* the vector file wins wherever it is actually served */
   (code, key) => `${CREST_DIR}/${key}.svg`,
@@ -889,7 +889,7 @@ function PSection({ label, sub, accent }) {
   const T = useTheme();
   const col = accent || T.accent;
   return (
-    <div style={{ marginTop: 30, marginBottom: 14, paddingLeft: 13, paddingRight: 13 }}>
+    <div style={{ marginTop: 26, marginBottom: 12 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
         <div style={{ width: 4, height: 18, borderRadius: 2, background: col, flexShrink: 0 }} />
         <span style={{ fontSize: FS.h2, fontWeight: WEIGHT.bold, color: T.text, letterSpacing: 0.2 }}>{label}</span>
@@ -993,12 +993,18 @@ function Nav({ tab, setTab }) {
   const tabs = [
     { id: "team", label: tr.tabs.team },
     { id: "players", label: tr.tabs.players },
-    { id: "projection", label: tr.tabs.projection },
     { id: "league", label: tr.tabs.league },
   ];
   return (
-    <div style={{ position: "sticky", top: 0, zIndex: 20, background: T.nav, borderBottom: `2px solid ${T.border}`, width: "100%", overflowX: "hidden" }}>
-      <div style={{ height: 4, background: `linear-gradient(90deg,${T.neon} 0%,${T.cyan} 55%,${T.accent2} 100%)` }} aria-hidden="true" />
+    <div style={{
+      position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 30,
+      maxWidth: 520, margin: "0 auto",
+      background: T.nav, borderTop: `1px solid ${T.borderStrong}`,
+      boxShadow: "0 -6px 20px rgba(0,0,0,0.30)",
+      overflowX: "hidden",
+      paddingBottom: "env(safe-area-inset-bottom, 0px)",
+    }}>
+      <div style={{ height: 3, background: `linear-gradient(90deg,${T.neon} 0%,${T.cyan} 55%,${T.accent2} 100%)` }} aria-hidden="true" />
       <div style={{ display: "flex", alignItems: "stretch", padding: "0 10px", width: "100%", boxSizing: "border-box" }}>
         <div style={{ display: "flex", alignItems: "center", marginRight: 10, flexShrink: 0 }}>
           <div aria-label="SB" style={{
@@ -1013,10 +1019,10 @@ function Nav({ tab, setTab }) {
           const active = tab === t.id;
           return (
             <button key={t.id} onClick={() => setTab(t.id)} style={{
-              padding: "11px 10px", fontSize: FS.small, background: "none", border: "none",
-              borderBottom: active ? `2px solid ${T.navAccent}` : "2px solid transparent",
+              padding: "10px 11px", fontSize: FS.small, background: "none", border: "none",
+              borderTop: active ? `2px solid ${T.navAccent}` : "2px solid transparent",
               color: active ? T.navAccent : T.navSub, fontWeight: active ? 700 : 400,
-              whiteSpace: "nowrap", flexShrink: 0, cursor: "pointer", marginBottom: -2,
+              whiteSpace: "nowrap", flexShrink: 0, cursor: "pointer", marginTop: -1,
             }}>{t.label}</button>
           );
         })}
@@ -1818,7 +1824,8 @@ export default function App() {
           <div style={{
             minHeight: "100vh", background: T.bg, color: T.text,
             fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif",
-            maxWidth: 520, margin: "0 auto", paddingBottom: 30,
+            maxWidth: 520, margin: "0 auto",
+            paddingBottom: "calc(72px + env(safe-area-inset-bottom, 0px))",
           }}>
             <div style={{
               display: "flex", alignItems: "center", gap: 9,
@@ -1834,12 +1841,12 @@ export default function App() {
               <ThemeToggle theme={theme} setTheme={setTheme} />
             </div>
 
-            <Nav tab={tab} setTab={setTab} />
-
             {tab === "team" && <TeamTab />}
             {tab === "players" && <PlayersTab />}
             {tab === "league" && <LeagueTab />}
             {tab === "model" && <ModelViz />}
+
+            <Nav tab={tab} setTab={setTab} />
           </div>
         </NavCtx.Provider>
       </ThemeCtx.Provider>
