@@ -135,10 +135,13 @@ const LANG = {
     notPlayed: "nog niet gespeeld", standingBefore: "Stand", result: "Uitslag",
     standings: "Stand", standingsSub: "Seizoen nog niet begonnen",
     modelTitle: "Hoe deze vijftien tot stand kwamen", modelSub: "De volledige route van data naar selectie",
-    pillarsTitle: "Drie bronnen", pillarsSub: "Alle drie publiek en controleerbaar",
-    formulaTitle: "De weging", formulaSub: "Hoe de drie bronnen tot een cijfer werden samengevoegd",
-    optTitle: "Van cijfer naar vijftien namen", optSub: "Wat de optimalisatie precies doet",
+    weighTitle: "Wat de selectie bepaalt", weighSub: "Vier termen, bij elkaar opgeteld tot \u00e9\u00e9n cijfer per speler",
+    exTitle: "Uitgerekend", exSub: "Dezelfde formule op drie spelers, met de echte cijfers",
+    showTitle: "Wat alleen wordt getoond", showSub: "Staat in de tabellen, telt niet mee in de keuze",
+    optTitle: "Van cijfer naar vijftien namen", optSub: "De regels waar de selectie aan moest voldoen",
     honestTitle: "Wat hier niet klopt", honestSub: "De zwakke plekken, expliciet benoemd",
+    termLbl: "Term", weightLbl: "Gewicht", scaleLbl: "Geschaald op",
+    totalScore: "Totaal", countsNot: "telt niet mee", countsYes: "telt mee",
   },
   en: {
     tabs: { team: "Team", players: "Players", league: "League", model: "Model" },
@@ -161,10 +164,13 @@ const LANG = {
     notPlayed: "not played yet", standingBefore: "Table", result: "Result",
     standings: "Table", standingsSub: "Season has not started",
     modelTitle: "How these fifteen were arrived at", modelSub: "The full route from data to squad",
-    pillarsTitle: "Three sources", pillarsSub: "All three public and checkable",
-    formulaTitle: "The weighting", formulaSub: "How the three sources were combined into one number",
-    optTitle: "From a number to fifteen names", optSub: "What the optimisation actually does",
+    weighTitle: "What decides the squad", weighSub: "Four terms, summed into one number per player",
+    exTitle: "Worked through", exSub: "The same formula on three players, with the real figures",
+    showTitle: "Shown but not counted", showSub: "Appears in the tables, plays no part in the choice",
+    optTitle: "From a number to fifteen names", optSub: "The rules the squad had to satisfy",
     honestTitle: "What is wrong with this", honestSub: "The weak points, stated plainly",
+    termLbl: "Term", weightLbl: "Weight", scaleLbl: "Scaled against",
+    totalScore: "Total", countsNot: "not counted", countsYes: "counted",
   },
 };
 
@@ -224,7 +230,7 @@ const CREST_PNG = {
   TOT: "data:image/png;base64,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",
 };
 
-const CREST_DIR = "/crests-v15";
+const CREST_DIR = "/crests-v16";
 const BADGE_PATHS = [
   /* the vector file wins wherever it is actually served */
   (code, key) => `${CREST_DIR}/${key}.svg`,
@@ -1655,170 +1661,243 @@ function LeagueTab() {
 /* ── MODEL TAB ──────────────────────────────────────────────────────────── */
 
 
-const IC = {
-  clock: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-  users: "M19 20a7 7 0 00-14 0M12 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7z",
-  trend: "M3 3v18h18M7 16l4-4 4 4 4-4",
-  layers: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
-  star: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
-  sigma: "M18 4H6l6 8-6 8h12",
-  info: "M12 16v-4M12 8h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-  arrow: "M5 12h14M12 5l7 7-7 7",
-  bars: "M18 20V10M12 20V4M6 20v-6",
-};
 
 
 
 /* ── MODEL TAB ──────────────────────────────────────────────────────────── */
-const PILLARS = [
-  { icon: "users", metric: "74.8% \u2192 0.5%",
-    nl: "1. Werkelijke eigendom", en: "1. Live ownership",
-    nlD: "Het percentage managers dat een speler bezit, rechtstreeks uit de FPL-API van vandaag. Dit is een meting, geen mening. Het telt het zwaarst omdat FPL een rangspel is: Haaland niet bezitten op 74.8% is een risico op rang, los van of hij per miljoen de beste keuze is.",
-    enD: "The percentage of managers who own a player, read straight from today's FPL API. This is a measurement, not an opinion. It weighs most because FPL is a rank game: not owning Haaland at 74.8% is a rank risk regardless of whether he is the best pick per million." },
-  { icon: "star", metric: "6 drafts",
-    nl: "2. Gepubliceerde expertdrafts", en: "2. Published expert drafts",
-    nlD: "Zes gepubliceerde speelweek 1 selecties van managers met bewezen resultaten, waaronder meervoudige top 10k finishers. Per speler geteld hoe vaak hij voorkomt. Dit vangt informatie die nog in geen enkele statistiek zit: blessures uit persconferenties, opstellingen uit oefenwedstrijden, rolwijzigingen na een trainerswissel.",
-    enD: "Six published gameweek 1 squads from managers with proven records, including multiple top 10k finishers. Counted per player as the number of drafts he appears in. This captures information not in any statistic yet: injuries from press conferences, line-ups from friendlies, role changes after a managerial switch." },
-  { icon: "layers", metric: "FPL-API",
-    nl: "3. Officiële prestatiecijfers", en: "3. Official performance data",
-    nlD: "Punten per duel, xG en xA per 90 minuten, en het aantal basisplaatsen van vorig seizoen. Allemaal rechtstreeks gepubliceerd door de FPL-API, die zijn onderliggende cijfers van Opta betrekt. Iedereen kan deze getallen ophalen en controleren.",
-    enD: "Points per match, expected goals and assists per 90 minutes, and starts made last season. All published directly by the FPL API, which sources its underlying numbers from Opta. Anyone can pull these figures and check them." },
+/* De vier termen die de selectie werkelijk hebben bepaald. Teruggerekend uit de
+   berekening zelf, niet uit het geheugen: elk cijfer hieronder is te herleiden
+   tot de kolommen eigendom, expertvermeldingen, punten per duel en basisplaatsen. */
+const TERMS = [
+  { w: 2.2, key: "own",
+    nl: "Eigendom", en: "Ownership",
+    scaleNl: "hoogste in het spel (74,8%)", scaleEn: "highest in the game (74.8%)",
+    nlD: "Het percentage managers dat de speler bezit, uit de FPL-API. Weegt het zwaarst omdat FPL een rangspel is: een speler van 74,8% niet bezitten kost rang zodra hij scoort, ongeacht of hij per miljoen de beste keuze is.",
+    enD: "The percentage of managers who own the player, from the FPL API. Weighs most because FPL is a rank game: not owning a player on 74.8% costs rank the moment he returns, regardless of whether he is the best pick per million." },
+  { w: 1.6, key: "exp",
+    nl: "Expertvermeldingen", en: "Expert mentions",
+    scaleNl: "zes van zes drafts", scaleEn: "six of six drafts",
+    nlD: "Hoe vaak een speler voorkwam in gepubliceerde speelweek 1 selecties van managers met bewezen resultaten. Dit is een handmatige telling van mij over die artikelen en de reactiedraden eronder, geen uitgegeven dataset. De schaal van zes is een aanname.",
+    enD: "How often a player appeared in published gameweek 1 squads from managers with proven records. This is a hand tally of mine across those articles and their comment threads, not a published dataset. The scale of six is an assumption." },
+  { w: 1.4, key: "ppg",
+    nl: "Punten per duel", en: "Points per match",
+    scaleNl: "hoogste in het spel (7,0), maal betrouwbaarheid", scaleEn: "highest in the game (7.0), times reliability",
+    nlD: "Het gemiddelde van vorig seizoen, uit de FPL-API. Deze term wordt nog eens vermenigvuldigd met de betrouwbaarheid hieronder, zodat een hoog gemiddelde uit weinig wedstrijden minder zwaar telt dan hetzelfde gemiddelde uit een heel seizoen.",
+    enD: "Last season's average, from the FPL API. This term is then multiplied by the reliability below, so a high average from few matches counts for less than the same average across a full season." },
+  { w: 0.4, key: "rel",
+    nl: "Betrouwbaarheid", en: "Reliability",
+    scaleNl: "basisplaatsen, afgetopt op 30", scaleEn: "starts, capped at 30",
+    nlD: "Het aantal basisplaatsen vorig seizoen gedeeld door dertig, met een plafond van 1. Telt twee keer mee: als eigen term en als vermenigvuldiger op de punten per duel. Speeltijd is het enige onderdeel waar een fout meteen alle andere cijfers waardeloos maakt.",
+    enD: "Starts made last season divided by thirty, capped at 1. Counts twice: as its own term and as a multiplier on points per match. Minutes is the one component where an error immediately makes every other figure worthless." },
 ];
 
-const FORMULA = [
-  { w: "2.2", nl: "Eigendom, geschaald naar de hoogst bezeten speler", en: "Ownership, scaled against the most-owned player" },
-  { w: "1.6", nl: "Expertvermeldingen, geschaald naar zes van zes", en: "Expert mentions, scaled against six of six" },
-  { w: "1.4", nl: "Punten per duel vorig seizoen", en: "Points per match last season" },
-  { w: "0.4", nl: "Betrouwbaarheid, uit het aantal basisplaatsen", en: "Reliability, from the number of starts" },
+/* De echte uitkomst voor drie spelers, zodat de optelling na te rekenen is. */
+const WORKED = [
+  { n: "Haaland",  c: "MCI", own: 2.200, exp: 1.600, ppg: 1.360, rel: 0.400 },
+  { n: "Gabriel",  c: "ARS", own: 0.771, exp: 0.533, ppg: 1.300, rel: 0.400 },
+  { n: "Mitchell", c: "CRY", own: 0.203, exp: 0.267, ppg: 0.720, rel: 0.400 },
 ];
 
-const OPT_STEPS = [
-  { icon: "sigma",
-    nl: "Waardeer de selectie, niet de speler", en: "Value the squad, not the player",
-    nlD: "Alleen elf spelers scoren. De basiself telt voor de volle waarde, de bank voor 0.45, 0.25 en 0.10. Vijftien spelers op volle waarde optellen duwt geld naar de bank, en dat is precies hoe je een selectie bouwt die op papier sterk lijkt en zwak begint.",
-    enD: "Only eleven players score. The starting XI counts at full value, the bench at 0.45, 0.25 and 0.10. Adding fifteen players at face value pushes money onto the bench, which is exactly how you build a squad that looks strong on paper and starts weak." },
-  { icon: "layers",
-    nl: "De spelregels als harde grens", en: "The game rules as hard constraints",
-    nlD: "Twee keepers, vijf verdedigers, vijf middenvelders, drie aanvallers. Maximaal drie spelers per club. Samen niet meer dan 100.0, tegen de echte prijzen van 2026/27.",
-    enD: "Two keepers, five defenders, five midfielders, three forwards. At most three players from one club. No more than 100.0 in total, against the real 2026/27 prices." },
-  { icon: "trend",
-    nl: "Klimmen vanaf vijftig startpunten", en: "Climb from fifty starting points",
-    nlD: "Vanaf elk willekeurig legaal startpunt pakt het model steeds de wissel die de selectiewaarde het meest verhoogt, tot niets meer verbetert. De beste van vijftig uitkomsten wint. Klimmen vanaf een enkel startpunt bleef aantoonbaar steken.",
-    enD: "From each random legal starting point the model repeatedly takes the swap that raises squad value most, until nothing improves. The best of fifty outcomes wins. Climbing from a single starting point demonstrably got stuck." },
+/* Kolommen die wel in de tabellen staan maar geen enkele rol in de keuze speelden.
+   Dat onderscheid stond eerder niet in deze tab, waardoor het leek alsof xG en xA
+   de selectie mede bepaalden. Dat is niet zo. */
+const SHOWN_ONLY = [
+  { nl: "xG en xA per 90", en: "xG and xA per 90",
+    nlD: "Officiele Opta-cijfers via de FPL-API. Ze staan in beide tabellen omdat ze vertellen waar het rendement vandaan komt, maar ze zitten niet in de formule hierboven.",
+    enD: "Official Opta figures via the FPL API. They sit in both tables because they say where the returns come from, but they are not in the formula above." },
+  { nl: "PPT", en: "PPT",
+    nlD: "Verwachte punten van FPL Prophet. Hun eigen site meldt dat de cijfers voor speelweek 1 tot 3 op prijs gebaseerde vuistregels zijn in plaats van hun machine learning model. Wij hebben dat nagerekend: binnen een positie correleren ze 0,88 tot 0,91 met de prijs, en bij keepers loopt het zelfs andersom.",
+    enD: "FPL Prophet's expected points. Their own site states the gameweek 1 to 3 figures are price-based rules of thumb rather than their machine learning model. We checked: within a position they correlate 0.88 to 0.91 with price, and for goalkeepers it runs backwards." },
+  { nl: "vPnt van de FPL-API", en: "xPts from the FPL API",
+    nlD: "Staat in de uitklap per speler. In de voorbereiding is dat cijfer samengeperst: slechts vier spelers in het hele spel halen het plafond van 4,0, dus het onderscheidt niets.",
+    enD: "Sits in each player's fold-out. In preseason the figure is compressed: only four players in the entire game reach the 4.0 ceiling, so it separates nothing." },
+];
+
+const RULES = [
+  { nl: "Twee keepers, vijf verdedigers, vijf middenvelders, drie aanvallers", en: "Two keepers, five defenders, five midfielders, three forwards" },
+  { nl: "Maximaal drie spelers per club", en: "At most three players from one club" },
+  { nl: "Samen niet meer dan 100,0 tegen de echte prijzen van 2026/27", en: "No more than 100.0 against the real 2026/27 prices" },
+  { nl: "Geblesseerde en niet-beschikbare spelers vooraf uitgesloten", en: "Injured and unavailable players excluded up front" },
+  { nl: "Basiself telt voor de volle waarde, de bank voor 0,45, 0,25 en 0,10", en: "Starting XI at full value, the bench at 0.45, 0.25 and 0.10" },
 ];
 
 const HONEST = [
-  { nl: "De PPT-kolom bepaalt niets",
-    en: "The PPT column decides nothing",
-    nlD: "PPT is de verwachte punten van FPL Prophet, een extern model, en staat er puur ter informatie. Het is niet meegewogen bij het samenstellen van de vijftien. Twee redenen: hun eigen site meldt dat de cijfers voor speelweek 1 tot 3 op prijs gebaseerde vuistregels zijn in plaats van hun machine learning model, en wij hebben dat gecontroleerd. Binnen een positie correleren hun cijfers 0.88 tot 0.91 met de prijs, dus het is grotendeels de prijs opnieuw. Bij keepers loopt het zelfs andersom: goedkopere keepers krijgen een hoger cijfer. Niet iedere speler heeft een waarde, want hun lijst toont alleen de bovenste namen.",
-    enD: "PPT is FPL Prophet's expected points, an external model, and it sits here purely for information. It played no part in choosing the fifteen. Two reasons: their own site states that the gameweek 1 to 3 figures are price-based rules of thumb rather than their machine learning model, and we checked that. Within a position their numbers correlate 0.88 to 0.91 with price, so it is largely price restated. For goalkeepers it even runs backwards, with cheaper keepers scoring higher. Not every player has a value, because their list only shows the top names." },
-  { nl: "Verwachte punten bestaat niet als publieke maatstaf",
-    en: "Expected points does not exist as a public metric",
-    nlD: "Voor xG en xA is er een publieke standaard van Opta die overal hetzelfde betekent. Voor verwachte punten is die er niet. De FPL-API geeft wel een eigen vPnt af, maar in de voorbereiding is dat cijfer samengeperst: slechts vier spelers in het hele spel halen het plafond van 4.0. Daarom staat in de tabel punten per duel van vorig seizoen, een gepubliceerd feit in plaats van een voorspelling.",
-    enD: "For expected goals and assists there is a public Opta standard that means the same thing everywhere. For expected points there is not. The FPL API does publish its own figure, but in preseason it is compressed: only four players in the entire game reach the 4.0 ceiling. So the table shows points per match from last season, a published fact rather than a forecast." },
+  { nl: "De berekening zit niet in deze app",
+    en: "The calculation does not live in this app",
+    nlD: "De vijftien namen zijn eenmalig buiten de app uitgerekend en daarna vastgezet. Wat je hier ziet is de uitkomst, niet een optimalisatie die meedraait. Verander je een prijs of een eigendomspercentage, dan rekent er niets opnieuw. Dat is een bewuste keuze voor een selectie die toch maar een keer wordt ingeleverd, maar het betekent dat deze tab beschrijft wat er gebeurd is en niet wat er gebeurt.",
+    enD: "The fifteen names were computed once outside the app and then fixed. What you see here is the outcome, not an optimisation that runs along with it. Change a price or an ownership figure and nothing recalculates. That is a deliberate choice for a squad that only gets entered once, but it means this tab describes what happened rather than what happens." },
+  { nl: "Het zoekproces is niet uitputtend",
+    en: "The search is not exhaustive",
+    nlD: "Vanaf vijftig willekeurige legale startpunten is steeds de wissel gepakt die de selectiewaarde het meest verhoogde, tot niets meer verbeterde. Dat is een lokale zoektocht, geen exacte oplosser. Er blijft een gat naar het echte optimum en hoe groot dat is weet ik niet.",
+    enD: "From fifty random legal starting points the swap that raised squad value most was taken repeatedly, until nothing improved. That is a local search, not an exact solver. A gap to the true optimum remains and I do not know how large it is." },
+  { nl: "De gewichten zijn een oordeel",
+    en: "The weights are a judgement",
+    nlD: "2,2 tegen 1,6 tegen 1,4 tegen 0,4 is nergens op gemeten. Ik heb eigendom het zwaarst laten wegen omdat het de enige bron is die direct over rang gaat, en punten per duel lichter omdat het achteruit kijkt. Andere gewichten geven een andere selectie.",
+    enD: "2.2 against 1.6 against 1.4 against 0.4 is not measured against anything. I gave ownership the most weight because it is the only source that speaks directly to rank, and points per match less because it looks backwards. Different weights give a different squad." },
   { nl: "Punten per duel kijkt achteruit",
     en: "Points per match looks backwards",
-    nlD: "Het cijfer komt van vorig seizoen en weet niets van een transfer, een trainerswissel of een veranderde rol. Daarom zijn de expertdrafts als tweede bron meegewogen: die vangen precies wat de statistiek nog niet weet.",
-    enD: "The figure comes from last season and knows nothing about a transfer, a change of manager or a changed role. That is why the expert drafts count as a second source: they capture exactly what the statistic does not know yet." },
-  { nl: "Promovendi hebben geen cijfers",
-    en: "Promoted clubs have no numbers",
-    nlD: "Spelers van Coventry, Hull en Ipswich hebben geen Premier League historie, dus geen punten per duel en geen xG. Ze konden niet op cijfers gekozen worden, hoe goed ze ook zijn. Datzelfde geldt voor iedereen die nieuw is in de competitie.",
-    enD: "Players at Coventry, Hull and Ipswich have no Premier League history, so no points per match and no expected goals. They could not be selected on numbers regardless of quality. The same applies to anyone new to the league." },
+    nlD: "Het cijfer komt van vorig seizoen en weet niets van een transfer, een trainerswissel of een veranderde rol. De expertvermeldingen zijn er juist om dat gat te dekken, maar dat is een handmatige telling van een handvol artikelen.",
+    enD: "The figure comes from last season and knows nothing about a transfer, a change of manager or a changed role. The expert mentions exist to cover that gap, but they are a hand tally of a handful of articles." },
+  { nl: "Promovendi en nieuwkomers konden niet gekozen worden",
+    en: "Promoted clubs and new arrivals could not be selected",
+    nlD: "Spelers van Coventry, Hull en Ipswich hebben geen Premier League historie, dus geen punten per duel en geen basisplaatsen. Hetzelfde geldt voor iedereen die nieuw is in de competitie. Ze scoorden daardoor structureel laag, hoe goed ze ook zijn.",
+    enD: "Players at Coventry, Hull and Ipswich have no Premier League history, so no points per match and no starts. The same applies to anyone new to the league. They scored structurally low as a result, regardless of quality." },
   { nl: "Eigendom is een momentopname",
     en: "Ownership is a snapshot",
-    nlD: "De eigendomscijfers zijn van vandaag, twee weken voor de deadline van 21 augustus. Ze bewegen snel zodra oefenwedstrijden en persconferenties landen. Deze selectie wil vlak voor de deadline nog een keer tegen het licht.",
-    enD: "The ownership figures are from today, two weeks before the deadline on 21 August. They move fast once friendlies and press conferences land. This squad wants one more check right before the deadline." },
+    nlD: "De cijfers zijn van begin augustus, ruim voor de deadline van 21 augustus. Ze bewegen snel zodra oefenwedstrijden en persconferenties landen. Deze selectie wil vlak voor de deadline nog een keer tegen het licht.",
+    enD: "The figures are from early August, well before the deadline on 21 August. They move fast once friendlies and press conferences land. This squad wants one more check right before the deadline." },
   { nl: "De bank staat op nul",
     en: "The bank is at zero",
-    nlD: "De optimalisatie besteedt tot de laatste 0.1, want ongebruikt geld scoort niets. Het gevolg is dat er geen ruimte is om bij de deadline een zijwaartse wissel te maken. Overweeg bewust 0.5 achter te houden.",
-    enD: "The optimisation spends to the last 0.1, because unspent money scores nothing. The consequence is no room for a sideways move at the deadline. Consider deliberately holding back 0.5." },
+    nlD: "Er is tot de laatste 0,1 uitgegeven, want ongebruikt geld scoort niets. Het gevolg is dat er geen ruimte is om bij de deadline een zijwaartse wissel te maken. Overweeg bewust 0,5 achter te houden.",
+    enD: "Everything was spent to the last 0.1, because unspent money scores nothing. The consequence is no room for a sideways move at the deadline. Consider deliberately holding back 0.5." },
 ];
+
+function WeightBar({ term, max }) {
+  const T = useTheme();
+  const lang = useLang();
+  const tr = useT();
+  const pct = Math.round((term.w / max) * 100);
+  return (
+    <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 4, overflow: "hidden", marginBottom: 8 }}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 8, padding: "10px 12px 7px" }}>
+        <span style={{ fontSize: FS.h2, fontWeight: WEIGHT.bold, color: T.accent, fontVariantNumeric: "tabular-nums", lineHeight: 1 }}>
+          {term.w.toFixed(1)}
+        </span>
+        <span style={{ flex: 1, fontSize: FS.small, fontWeight: WEIGHT.semibold, color: T.text }}>
+          {lang === "nl" ? term.nl : term.en}
+        </span>
+      </div>
+      <div style={{ height: 5, background: T.bg, margin: "0 12px", borderRadius: 3, overflow: "hidden" }}>
+        <div style={{ height: 5, width: pct + "%", background: T.accent, borderRadius: 3 }} />
+      </div>
+      <div style={{ padding: "7px 12px 10px" }}>
+        <div style={{ fontSize: FS.micro, letterSpacing: 0.4, textTransform: "uppercase", color: T.textFaint, marginBottom: 4 }}>
+          {tr.scaleLbl}: {lang === "nl" ? term.scaleNl : term.scaleEn}
+        </div>
+        <div style={{ fontSize: FS.caption, color: T.textSub, lineHeight: 1.6 }}>
+          {lang === "nl" ? term.nlD : term.enD}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function ModelViz() {
   const T = useTheme();
   const lang = useLang();
   const tr = useT();
-  const orange = T.accent;
   const [openH, setOpenH] = useState(null);
+  const maxW = Math.max(...TERMS.map((t) => t.w));
+  const GRID = "18px minmax(0,1fr) 38px 38px 38px 34px 40px";
 
   return (
     <div style={{ padding: "12px 13px 0" }}>
       <PSection label={tr.modelTitle} sub={tr.modelSub} />
       <div style={{
         marginTop: -4, background: T.card, border: `1px solid ${T.border}`,
-        borderLeft: `3px solid ${T.accent2}`, borderRadius: 3, padding: "10px 12px",
-        fontSize: FS.small, color: T.textSub, lineHeight: 1.65, marginBottom: 12,
+        borderLeft: `3px solid ${T.accent2}`, borderRadius: 3, padding: "11px 12px",
+        fontSize: FS.small, color: T.textSub, lineHeight: 1.65,
       }}>
         {lang === "nl"
-          ? "Elk cijfer in deze app is publiek en controleerbaar: eigendom en prestatiecijfers uit de offici\u00eble FPL-API, plus zes gepubliceerde expertdrafts. Er zit geen eigen voorspellingsmodel achter. Drie bronnen zijn per speler gescoord en samengevoegd, waarna een optimalisatie de best mogelijke legale vijftien binnen 100.0 zoekt."
-          : "Every figure in this app is public and checkable: ownership and performance data from the official FPL API, plus six published expert drafts. There is no in-house prediction model behind it. Three sources were scored per player and combined, after which an optimisation searches for the best legal fifteen within 100.0."}
+          ? "Er zit geen eigen voorspellingsmodel achter deze selectie. Elke speler kreeg \u00e9\u00e9n cijfer uit vier termen, en daarna is de best scorende legale vijftien binnen 100,0 gezocht. Alles hieronder is terug te rekenen uit publieke bronnen."
+          : "There is no in-house prediction model behind this squad. Every player got one number from four terms, after which the best-scoring legal fifteen within 100.0 was searched for. Everything below can be recomputed from public sources."}
       </div>
 
-      <PSection label={tr.pillarsTitle} sub={tr.pillarsSub} accent={T.accent2} />
+      {/* ── wat meetelt ─────────────────────────────────────────────── */}
+      <PSection label={tr.weighTitle} sub={tr.weighSub} />
       <div style={{ marginTop: -4 }}>
-        {PILLARS.map((s) => (
-          <div key={s.icon} style={{
-            background: T.card, border: `1px solid ${T.border}`, borderRadius: 4,
-            padding: "11px 12px", marginBottom: 8,
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-              <span style={{ flexShrink: 0 }}>{IC[s.icon]}</span>
-              <span style={{ flex: 1, fontSize: FS.small, fontWeight: WEIGHT.bold, color: T.text }}>
-                {lang === "nl" ? s.nl : s.en}
+        {TERMS.map((t) => <WeightBar key={t.key} term={t} max={maxW} />)}
+      </div>
+
+      {/* ── het rekenvoorbeeld ──────────────────────────────────────── */}
+      <PSection label={tr.exTitle} sub={tr.exSub} accent={T.accent2} />
+      <div style={{ marginTop: -4, background: T.card, border: `1px solid ${T.border}`, borderRadius: 4, overflow: "hidden" }}>
+        <div style={{ display: "grid", gridTemplateColumns: GRID, gap: 4, padding: "6px 10px", background: T.bg, borderBottom: `1px solid ${T.border}` }}>
+          <span />
+          <span style={{ fontSize: FS.micro, letterSpacing: 0.4, textTransform: "uppercase", color: T.textFaint }}>{tr.colPlayer}</span>
+          {TERMS.map((t) => (
+            <span key={t.key} style={{ fontSize: FS.micro, fontWeight: WEIGHT.semibold, color: T.textFaint, textAlign: "right" }}>
+              {t.w.toFixed(1)}
+            </span>
+          ))}
+          <span style={{ fontSize: FS.micro, fontWeight: WEIGHT.semibold, color: T.textFaint, textAlign: "right" }}>{tr.totalScore}</span>
+        </div>
+        {WORKED.map((w, i) => {
+          const total = TERMS.reduce((a, t) => a + w[t.key], 0);
+          return (
+            <div key={w.n} style={{
+              display: "grid", gridTemplateColumns: GRID, gap: 4, alignItems: "center",
+              padding: "8px 10px", borderBottom: i < WORKED.length - 1 ? `1px solid ${T.border}` : "none",
+            }}>
+              <span style={{ fontSize: 14, lineHeight: 1 }}><Crest club={w.c} /></span>
+              <span style={{ fontSize: FS.small, fontWeight: WEIGHT.medium, color: T.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{w.n}</span>
+              {TERMS.map((t) => (
+                <span key={t.key} style={{ fontSize: FS.caption, color: T.textSub, textAlign: "right", fontVariantNumeric: "tabular-nums" }}>
+                  {w[t.key].toFixed(2)}
+                </span>
+              ))}
+              <span style={{ fontSize: FS.small, fontWeight: WEIGHT.bold, color: T.accent, textAlign: "right", fontVariantNumeric: "tabular-nums" }}>
+                {total.toFixed(2)}
               </span>
-              <span style={{ fontSize: FS.micro, fontWeight: WEIGHT.bold, color: orange, whiteSpace: "nowrap" }}>{s.metric}</span>
             </div>
-            <div style={{ fontSize: FS.caption, color: T.textSub, lineHeight: 1.65 }}>
-              {lang === "nl" ? s.nlD : s.enD}
+          );
+        })}
+      </div>
+      <div style={{ fontSize: FS.caption, color: T.textSub, lineHeight: 1.6, marginTop: 8 }}>
+        {lang === "nl"
+          ? "Haaland haalt het maximum op de eerste twee termen. Gabriel scoort bijna even hoog op punten per duel maar mist het eigendom, en Mitchell draait vrijwel volledig op zijn punten per duel. Dat verschil is precies waarom de gewichten er zo toe doen."
+          : "Haaland maxes out the first two terms. Gabriel scores nearly as high on points per match but lacks the ownership, and Mitchell runs almost entirely on his points per match. That gap is exactly why the weights matter so much."}
+      </div>
+
+      {/* ── wat er wel staat maar niet meetelde ─────────────────────── */}
+      <PSection label={tr.showTitle} sub={tr.showSub} accent={T.textFaint} />
+      <div style={{ marginTop: -4 }}>
+        {SHOWN_ONLY.map((x) => (
+          <div key={x.en} style={{
+            background: T.bg, border: `1px dashed ${T.borderStrong}`, borderRadius: 4,
+            padding: "10px 12px", marginBottom: 8,
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 5 }}>
+              <span style={{ fontSize: FS.small, fontWeight: WEIGHT.bold, color: T.text, flex: 1 }}>
+                {lang === "nl" ? x.nl : x.en}
+              </span>
+              <span style={{
+                fontSize: FS.micro, fontWeight: WEIGHT.bold, letterSpacing: 0.4, textTransform: "uppercase",
+                color: T.textFaint, border: `1px solid ${T.borderStrong}`, borderRadius: 2, padding: "1px 5px",
+              }}>{tr.countsNot}</span>
+            </div>
+            <div style={{ fontSize: FS.caption, color: T.textSub, lineHeight: 1.6 }}>
+              {lang === "nl" ? x.nlD : x.enD}
             </div>
           </div>
         ))}
       </div>
 
-      <div style={{
-        background: T.card, border: `1px solid ${T.border}`, borderLeft: `3px solid ${T.accent2}`,
-        borderRadius: 3, padding: "10px 12px", marginTop: 8, marginBottom: 2,
-      }}>
-        <div style={{ fontSize: FS.small, fontWeight: WEIGHT.semibold, color: T.text, marginBottom: 3 }}>{tr.ppTitle}</div>
-        <div style={{ fontSize: FS.caption, color: T.textSub, lineHeight: 1.6 }}>{tr.ppSub}</div>
-      </div>
-
-      <PSection label={tr.formulaTitle} sub={tr.formulaSub} />
+      {/* ── de regels waarbinnen gezocht is ─────────────────────────── */}
+      <PSection label={tr.optTitle} sub={tr.optSub} />
       <div style={{ marginTop: -4, background: T.card, border: `1px solid ${T.border}`, borderRadius: 4, overflow: "hidden" }}>
-        {FORMULA.map((f, i) => (
-          <div key={f.w} style={{
-            display: "flex", alignItems: "center", gap: 10, padding: "9px 12px",
-            borderBottom: i < FORMULA.length - 1 ? `1px solid ${T.border}` : "none",
+        {RULES.map((r, i) => (
+          <div key={r.en} style={{
+            display: "flex", alignItems: "flex-start", gap: 9, padding: "9px 12px",
+            borderBottom: i < RULES.length - 1 ? `1px solid ${T.border}` : "none",
           }}>
             <span style={{
-              fontSize: FS.small, fontWeight: WEIGHT.bold, color: orange,
-              minWidth: 28, fontVariantNumeric: "tabular-nums",
-            }}>{f.w}</span>
-            <span style={{ fontSize: FS.caption, color: T.textSub, lineHeight: 1.5 }}>{lang === "nl" ? f.nl : f.en}</span>
+              width: 16, height: 16, borderRadius: 3, flexShrink: 0, marginTop: 1,
+              background: T.accentFaint, color: T.accent, fontSize: FS.micro,
+              fontWeight: WEIGHT.bold, display: "flex", alignItems: "center", justifyContent: "center",
+            }}>{i + 1}</span>
+            <span style={{ fontSize: FS.caption, color: T.textSub, lineHeight: 1.55 }}>{lang === "nl" ? r.nl : r.en}</span>
           </div>
         ))}
-        <div style={{ padding: "9px 12px", background: T.bg, borderTop: `1px solid ${T.border}`, fontSize: FS.caption, color: T.textSub, lineHeight: 1.6 }}>
-          {lang === "nl"
-            ? "De gewichten zijn een oordeel, geen meting. Eigendom telt het zwaarst omdat het de enige bron is die direct over rang gaat. Punten per duel telt lichter omdat het achteruit kijkt en niets weet van transfers of rolwijzigingen."
-            : "The weights are a judgement, not a measurement. Ownership counts most because it is the only source that speaks directly to rank. Points per match counts less because it looks backwards and knows nothing about transfers or changes of role."}
-        </div>
       </div>
 
-      <PSection label={tr.optTitle} sub={tr.optSub} accent={T.accent2} />
-      <div style={{ marginTop: -4 }}>
-        {OPT_STEPS.map((s) => (
-          <StepCard key={s.icon} icon={IC[s.icon]}
-            title={lang === "nl" ? s.nl : s.en}
-            body={lang === "nl" ? s.nlD : s.enD} />
-        ))}
-      </div>
-
+      {/* ── de zwakke plekken ───────────────────────────────────────── */}
       <PSection label={tr.honestTitle} sub={tr.honestSub} accent={T.red} />
       <div style={{ marginTop: -4, marginBottom: 18 }}>
         {HONEST.map((h, i) => (
           <div key={i} style={{
             background: T.card, border: `1px solid ${T.border}`,
-            borderLeft: `3px solid ${T.red}`, borderRadius: 3, marginBottom: 8, overflow: "hidden",
+            borderLeft: `3px solid ${T.red}`, borderRadius: 3, marginBottom: 7, overflow: "hidden",
           }}>
             <button onClick={() => setOpenH(openH === i ? null : i)} aria-expanded={openH === i}
               style={{
@@ -1842,21 +1921,6 @@ function ModelViz() {
   );
 }
 
-function StepCard({ icon, title, body }) {
-  const T = useTheme();
-  return (
-    <div style={{
-      background: T.card, border: `1px solid ${T.border}`, borderRadius: 4,
-      padding: "11px 12px", marginBottom: 8,
-    }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-        <span style={{ flexShrink: 0 }}>{icon}</span>
-        <span style={{ fontSize: FS.small, fontWeight: WEIGHT.bold, color: T.text }}>{title}</span>
-      </div>
-      <div style={{ fontSize: FS.caption, color: T.textSub, lineHeight: 1.65 }}>{body}</div>
-    </div>
-  );
-}
 
 /* ── APP ────────────────────────────────────────────────────────────────── */
 export default function App() {
