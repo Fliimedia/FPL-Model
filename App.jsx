@@ -119,18 +119,18 @@ const LANG = {
     appTitle: "FPL 2026/27", gw: "Speelweek",
     squadTitle: "De selectie", squadSub: "Vijftien spelers, exact 100.0 besteed. Tik op een speler voor de onderbouwing.",
     watchTitle: "In de gaten houden", watchSub: "De vijftien namen die het net niet haalden, met de reden waarom ze tweede keus zijn.",
-    colPlayer: "Speler", colClub: "Club", colPos: "Pos", colVal: "Waarde", colXg: "xG", colXa: "xA", colEp: "P/W", colPp: "PPT",
+    colPlayer: "Speler", colClub: "Club", colPos: "Pos", colVal: "Waarde", colXg: "xG", colXa: "xA", colEp: "P/W", colPp: "xP",
     xiLbl: "Basis", benchLbl: "Bank", benchTitle: "Bank",
     lineupTitle: "Opstelling", lineupSub: "De basiself, met de bank eronder.",
     armband: "Band", capShort: "A", viceShort: "R", captain: "Aanvoerder", vice: "Reserve-aanvoerder",
     whyPicked: "Waarom deze speler", whyWatch: "Waarom tweede keus",
     ppgLbl: "Punten per duel", ppgSub: "vorig seizoen",
-    ppTitle: "PPT staat los van de selectie", ppSub: "Alleen ter informatie", startsLbl: "Basisplaatsen", ownLbl: "Eigendom", epLbl: "vPnt volgens FPL",
+    ppTitle: "xP staat los van de selectie", ppSub: "Alleen ter informatie", startsLbl: "Basisplaatsen", ownLbl: "Eigendom", epLbl: "xP (FPL Prophet)",
     noData: "Geen Premier League data beschikbaar",
     totalRow: "Totaal", squadValue: "Ploegwaarde", bankLbl: "In kas", xiPoints: "P/W basiself",
     poolTitle: "Alle spelers", poolSub: "De volledige pool waaruit gekozen is, met dezelfde cijfers. Filter op club.",
     allClubs: "Alle clubs", inSquad: "In selectie", onWatch: "Op de lijst",
-    sortBy: "Sorteer", sortEp: "P/W", sortPp: "PPT", sortVal: "Waarde", sortXg: "xG", sortXa: "xA",
+    sortBy: "Sorteer", sortEp: "P/W", sortPp: "xP", sortVal: "Waarde", sortXg: "xG", sortXa: "xA",
     matchesTitle: "Wedstrijden", matchesSub: "Aftraptijden en uitslagen. Geen voorspellingen.",
     notPlayed: "nog niet gespeeld", standingBefore: "Stand", result: "Uitslag",
     standings: "Stand", standingsSub: "Seizoen nog niet begonnen",
@@ -148,18 +148,18 @@ const LANG = {
     appTitle: "FPL 2026/27", gw: "Gameweek",
     squadTitle: "The squad", squadSub: "Fifteen players, exactly 100.0 spent. Tap a player for the reasoning.",
     watchTitle: "Worth watching", watchSub: "The fifteen names that just missed out, with why they are second choice.",
-    colPlayer: "Player", colClub: "Club", colPos: "Pos", colVal: "Value", colXg: "xG", colXa: "xA", colEp: "P/M", colPp: "PPT",
+    colPlayer: "Player", colClub: "Club", colPos: "Pos", colVal: "Value", colXg: "xG", colXa: "xA", colEp: "P/M", colPp: "xP",
     xiLbl: "Starting", benchLbl: "Bench", benchTitle: "Bench",
     lineupTitle: "Line-up", lineupSub: "The starting eleven, with the bench below.",
     armband: "Armband", capShort: "C", viceShort: "V", captain: "Captain", vice: "Vice-captain",
     whyPicked: "Why this player", whyWatch: "Why second choice",
     ppgLbl: "Points per match", ppgSub: "last season",
-    ppTitle: "PPT plays no part in the selection", ppSub: "Shown for information only", startsLbl: "Starts", ownLbl: "Ownership", epLbl: "xPts per the FPL API",
+    ppTitle: "xP plays no part in the selection", ppSub: "Shown for information only", startsLbl: "Starts", ownLbl: "Ownership", epLbl: "xP (FPL Prophet)",
     noData: "No Premier League data available",
     totalRow: "Total", squadValue: "Squad value", bankLbl: "Bank", xiPoints: "Starting XI P/M",
     poolTitle: "All players", poolSub: "The full pool the squad was chosen from, same figures. Filter by club.",
     allClubs: "All clubs", inSquad: "In squad", onWatch: "On the list",
-    sortBy: "Sort", sortEp: "P/M", sortPp: "PPT", sortVal: "Value", sortXg: "xG", sortXa: "xA",
+    sortBy: "Sort", sortEp: "P/M", sortPp: "xP", sortVal: "Value", sortXg: "xG", sortXa: "xA",
     matchesTitle: "Matches", matchesSub: "Kick off times and results. No predictions.",
     notPlayed: "not played yet", standingBefore: "Table", result: "Result",
     standings: "Table", standingsSub: "Season has not started",
@@ -230,7 +230,7 @@ const CREST_PNG = {
   TOT: "data:image/png;base64,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",
 };
 
-const CREST_DIR = "/crests-v16";
+const CREST_DIR = "/crests-v17";
 const BADGE_PATHS = [
   /* the vector file wins wherever it is actually served */
   (code, key) => `${CREST_DIR}/${key}.svg`,
@@ -1083,6 +1083,8 @@ function TableHead() {
   );
 }
 
+const rowId = (p) => `row-${p.c}-${p.n.replace(/[^A-Za-z0-9]/g, "")}`;
+
 function PlayerRow({ p, open, onToggle, mode }) {
   const T = useTheme();
   const lang = useLang();
@@ -1091,7 +1093,7 @@ function PlayerRow({ p, open, onToggle, mode }) {
   const isCap = p.n === CAPTAIN;
   const isVice = p.n === VICE;
   return (
-    <div style={{ borderBottom: `1px solid ${T.border}` }}>
+    <div id={rowId(p)} style={{ borderBottom: `1px solid ${T.border}`, scrollMarginTop: 64 }}>
       <div onClick={onToggle} style={{
         display: "grid", gridTemplateColumns: GRID, gap: 4, alignItems: "center",
         padding: "8px 10px", cursor: "pointer",
@@ -1135,7 +1137,7 @@ function PlayerRow({ p, open, onToggle, mode }) {
               [tr.ppgLbl, p.ppg ? p.ppg.toFixed(1) : "\u2013"],
               [tr.ownLbl, p.own ? p.own.toFixed(1) + "%" : "\u2013"],
               [tr.startsLbl, p.starts != null ? String(p.starts) : "\u2013"],
-              [tr.epLbl, p.ep ? p.ep.toFixed(1) : "\u2013"],
+              [tr.epLbl, p.pp == null ? "\u2013" : p.pp.toFixed(1)],
             ].map(([k, v]) => (
               <div key={k} style={{ display: "flex", justifyContent: "space-between", gap: 6 }}>
                 <span style={{ fontSize: FS.caption, color: T.textSub }}>{k}</span>
@@ -1190,21 +1192,31 @@ function PriceChip({ price, pts, small }) {
       border: "1px solid rgba(255,255,255,0.22)",
     }}>
       <span style={{ ...cell, background: "rgba(255,255,255,0.13)", color: "rgba(255,255,255,0.88)" }}>
-        {price.toFixed(1)}
+        {"\u20AC" + price.toFixed(1) + "M"}
       </span>
       <span style={{ ...cell, background: T.neon, color: "#04180D" }}>
-        {pts ? pts.toFixed(1) : "\u2013"}
+        {pts == null ? "\u2013" : pts.toFixed(1)}
       </span>
     </div>
   );
 }
 
-function PitchPlayer({ p, cap, vice, size, sub }) {
+function PitchPlayer({ p, cap, vice, size, sub, onSelect }) {
   const T = useTheme();
   const tr = useT();
   const dim = sub ? 0.82 : 1;
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: sub ? 62 : 68, opacity: dim }}>
+    <div
+      onClick={() => onSelect && onSelect(p)}
+      role={onSelect ? "button" : undefined}
+      tabIndex={onSelect ? 0 : undefined}
+      onKeyDown={(e) => { if (onSelect && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); onSelect(p); } }}
+      style={{
+        display: "flex", flexDirection: "column", alignItems: "center",
+        width: sub ? 62 : 68, opacity: dim,
+        cursor: onSelect ? "pointer" : "default",
+        background: "none", border: "none", padding: 0,
+      }}>
       <div style={{ position: "relative", marginBottom: 5 }}>
         <PlayerPhoto code={p.code} club={p.c} size={size}
           ring={cap ? T.neon : "rgba(255,255,255,0.55)"} />
@@ -1228,12 +1240,12 @@ function PitchPlayer({ p, cap, vice, size, sub }) {
         fontWeight: WEIGHT.medium, lineHeight: 1.2,
         maxWidth: "100%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
       }}>{p.n}</div>
-      <PriceChip price={p.price} pts={p.ppg} small={sub} />
+      <PriceChip price={p.price} pts={p.pp} small={sub} />
     </div>
   );
 }
 
-function PitchViz() {
+function PitchViz({ onSelect }) {
   const T = useTheme();
   const tr = useT();
   const xi = SQUAD.filter((p) => XI_SET.has(p.n));
@@ -1308,7 +1320,7 @@ function PitchViz() {
           position: "relative", zIndex: 1,
         }}>
           {rows[pos].map((p) => (
-            <PitchPlayer key={p.n} p={p} cap={p.n === CAPTAIN} vice={p.n === VICE} size={42} />
+            <PitchPlayer key={p.n} p={p} cap={p.n === CAPTAIN} vice={p.n === VICE} size={42} onSelect={onSelect} />
           ))}
         </div>
       ))}
@@ -1323,7 +1335,7 @@ function PitchViz() {
           textAlign: "center", marginBottom: 10,
         }}>{tr.benchTitle}</div>
         <div style={{ display: "flex", justifyContent: "center", gap: 4, flexWrap: "wrap" }}>
-          {bench.map((p) => <PitchPlayer key={p.n} p={p} size={34} sub />)}
+          {bench.map((p) => <PitchPlayer key={p.n} p={p} size={34} sub onSelect={onSelect} />)}
         </div>
       </div>
     </div>
@@ -1337,6 +1349,19 @@ function TeamTab() {
   const tr = useT();
   const [openKey, setOpenKey] = useState(null);
   const cap = SQUAD.find((p) => p.n === CAPTAIN);
+
+  /* Tikken op een speler in de opstelling klapt zijn rij in de tabel open en
+     scrollt ernaartoe. De rij krijgt scrollMarginTop mee, anders schuift hij
+     onder de vaste tabbalk. Het scrollen gebeurt in de volgende frame, want de
+     rij moet eerst uitgeklapt zijn voordat zijn positie klopt. */
+  const jumpTo = (p) => {
+    const key = p.n + p.c;
+    setOpenKey(key);
+    requestAnimationFrame(() => {
+      const el = typeof document !== "undefined" && document.getElementById(rowId(p));
+      if (el && el.scrollIntoView) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  };
 
   return (
     <div style={{ padding: "12px 13px 0" }}>
@@ -1367,7 +1392,7 @@ function TeamTab() {
         </div>
       </div>
 
-      <div style={{ marginTop: 12 }}><PitchViz /></div>
+      <div style={{ marginTop: 12 }}><PitchViz onSelect={jumpTo} /></div>
 
       <PSection label={tr.squadTitle} sub={tr.squadSub} />
       <div style={{ marginTop: -4 }}>
@@ -1705,7 +1730,7 @@ const SHOWN_ONLY = [
   { nl: "xG en xA per 90", en: "xG and xA per 90",
     nlD: "Officiele Opta-cijfers via de FPL-API. Ze staan in beide tabellen omdat ze vertellen waar het rendement vandaan komt, maar ze zitten niet in de formule hierboven.",
     enD: "Official Opta figures via the FPL API. They sit in both tables because they say where the returns come from, but they are not in the formula above." },
-  { nl: "PPT", en: "PPT",
+  { nl: "xP", en: "xP",
     nlD: "Verwachte punten van FPL Prophet. Hun eigen site meldt dat de cijfers voor speelweek 1 tot 3 op prijs gebaseerde vuistregels zijn in plaats van hun machine learning model. Wij hebben dat nagerekend: binnen een positie correleren ze 0,88 tot 0,91 met de prijs, en bij keepers loopt het zelfs andersom.",
     enD: "FPL Prophet's expected points. Their own site states the gameweek 1 to 3 figures are price-based rules of thumb rather than their machine learning model. We checked: within a position they correlate 0.88 to 0.91 with price, and for goalkeepers it runs backwards." },
   { nl: "vPnt van de FPL-API", en: "xPts from the FPL API",
