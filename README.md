@@ -32,3 +32,20 @@ checkable:
 - Crest and photo paths are versioned (`crests-v10`) purely to defeat browser caching.
 - Club crests and player portraits are not redistributed here beyond the crest files
   themselves; portraits are hotlinked from the official Premier League CDN.
+
+## Running it
+
+```bash
+npm install
+npm run dev      # local, on http://localhost:5173
+npm run build    # production bundle into dist/
+npm run preview  # serve the built bundle
+```
+
+Vite + React 19. `App.jsx` sits at the repo root rather than in `src/`, matching the
+layout used across the other Flii apps; `src/main.jsx` mounts it. Everything under
+`public/` is copied to the site root, so the crest and photo paths resolve as
+`/crests-v11/ARS.svg` and `/photos/{code}.png`.
+
+Deploys to Vercel as-is: `vercel.json` sets the framework, build command and output
+directory, so no dashboard configuration is needed.

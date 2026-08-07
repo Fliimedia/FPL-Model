@@ -1,0 +1,18 @@
+/* The app styles itself inline, so this only resets the page around it. */
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* matches the app background so overscroll on iOS does not flash white */
+  background: #F4F4F6;
+}
+
+button { font-family: inherit; cursor: pointer; }
+select, textarea, input { font-family: inherit; }
