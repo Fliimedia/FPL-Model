@@ -121,7 +121,8 @@ const LANG = {
     watchTitle: "In de gaten houden", watchSub: "De vijftien namen die het net niet haalden, met de reden waarom ze tweede keus zijn.",
     colPlayer: "Speler", colClub: "Club", colPos: "Pos", colVal: "Waarde", colXg: "xG", colXa: "xA", colEp: "P/W", colPp: "PPT",
     xiLbl: "Basis", benchLbl: "Bank", benchTitle: "Bank",
-    lineupTitle: "Opstelling", lineupSub: "De basiself, met de bank eronder.", captain: "Aanvoerder", vice: "Reserve-aanvoerder",
+    lineupTitle: "Opstelling", lineupSub: "De basiself, met de bank eronder.",
+    armband: "Band", capShort: "A", viceShort: "R", captain: "Aanvoerder", vice: "Reserve-aanvoerder",
     whyPicked: "Waarom deze speler", whyWatch: "Waarom tweede keus",
     ppgLbl: "Punten per duel", ppgSub: "vorig seizoen",
     ppTitle: "PPT staat los van de selectie", ppSub: "Alleen ter informatie", startsLbl: "Basisplaatsen", ownLbl: "Eigendom", epLbl: "vPnt volgens FPL",
@@ -146,7 +147,8 @@ const LANG = {
     watchTitle: "Worth watching", watchSub: "The fifteen names that just missed out, with why they are second choice.",
     colPlayer: "Player", colClub: "Club", colPos: "Pos", colVal: "Value", colXg: "xG", colXa: "xA", colEp: "P/M", colPp: "PPT",
     xiLbl: "Starting", benchLbl: "Bench", benchTitle: "Bench",
-    lineupTitle: "Line-up", lineupSub: "The starting eleven, with the bench below.", captain: "Captain", vice: "Vice-captain",
+    lineupTitle: "Line-up", lineupSub: "The starting eleven, with the bench below.",
+    armband: "Armband", capShort: "C", viceShort: "V", captain: "Captain", vice: "Vice-captain",
     whyPicked: "Why this player", whyWatch: "Why second choice",
     ppgLbl: "Points per match", ppgSub: "last season",
     ppTitle: "PPT plays no part in the selection", ppSub: "Shown for information only", startsLbl: "Starts", ownLbl: "Ownership", epLbl: "xPts per the FPL API",
@@ -222,7 +224,7 @@ const CREST_PNG = {
   TOT: "data:image/png;base64,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",
 };
 
-const CREST_DIR = "/crests-v13";
+const CREST_DIR = "/crests-v14";
 const BADGE_PATHS = [
   /* the vector file wins wherever it is actually served */
   (code, key) => `${CREST_DIR}/${key}.svg`,
@@ -1166,9 +1168,34 @@ function PlayerTable({ rows, mode, openKey, setOpenKey }) {
    reads as outside the pitch rather than another row of it. */
 const PITCH_ROWS = ["FWD", "MID", "DEF", "GK"];
 
-function PitchPlayer({ p, cap, size, sub }) {
+/* Prijs en punten per duel in een gedeelde pil: links wat hij kost, rechts wat
+   hij oplevert. Naast elkaar zetten maakt de verhouding tussen die twee in een
+   oogopslag leesbaar, wat op een veldweergave het enige is wat telt. */
+function PriceChip({ price, pts, small }) {
   const T = useTheme();
-  const lang = useLang();
+  const cell = {
+    fontSize: FS.micro, fontWeight: WEIGHT.bold, lineHeight: 1,
+    padding: small ? "2px 4px" : "3px 5px", fontVariantNumeric: "tabular-nums",
+  };
+  return (
+    <div style={{
+      display: "inline-flex", alignItems: "stretch", marginTop: 3,
+      borderRadius: 3, overflow: "hidden",
+      border: "1px solid rgba(255,255,255,0.22)",
+    }}>
+      <span style={{ ...cell, background: "rgba(255,255,255,0.13)", color: "rgba(255,255,255,0.88)" }}>
+        {price.toFixed(1)}
+      </span>
+      <span style={{ ...cell, background: T.neon, color: "#04180D" }}>
+        {pts ? pts.toFixed(1) : "\u2013"}
+      </span>
+    </div>
+  );
+}
+
+function PitchPlayer({ p, cap, vice, size, sub }) {
+  const T = useTheme();
+  const tr = useT();
   const dim = sub ? 0.82 : 1;
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: sub ? 62 : 68, opacity: dim }}>
@@ -1179,13 +1206,15 @@ function PitchPlayer({ p, cap, size, sub }) {
           position: "absolute", bottom: -2, right: -3, fontSize: sub ? 10 : 12, lineHeight: 1,
           filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.55))",
         }}><Crest club={p.c} /></span>
-        {cap && (
+        {(cap || vice) && (
           <span style={{
             position: "absolute", top: -3, left: -3, width: 16, height: 16, borderRadius: "50%",
-            background: T.neon, color: "#04180D", fontSize: 9, fontWeight: WEIGHT.bold,
+            background: cap ? T.neon : "rgba(255,255,255,0.90)",
+            color: cap ? "#04180D" : "#1A0020",
+            fontSize: 9, fontWeight: WEIGHT.bold,
             display: "flex", alignItems: "center", justifyContent: "center",
             boxShadow: "0 1px 3px rgba(0,0,0,0.5)",
-          }}>{lang === "nl" ? "A" : "C"}</span>
+          }}>{cap ? tr.capShort : tr.viceShort}</span>
         )}
       </div>
       <div style={{
@@ -1193,9 +1222,7 @@ function PitchPlayer({ p, cap, size, sub }) {
         fontWeight: WEIGHT.medium, lineHeight: 1.2,
         maxWidth: "100%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
       }}>{p.n}</div>
-      <div style={{ fontSize: FS.micro, color: "rgba(255,255,255,0.55)", lineHeight: 1.3, marginTop: 1 }}>
-        {p.ppg ? p.ppg.toFixed(1) : "\u2013"}
-      </div>
+      <PriceChip price={p.price} pts={p.ppg} small={sub} />
     </div>
   );
 }
@@ -1210,6 +1237,8 @@ function PitchViz() {
   xi.forEach((p) => rows[p.pos].push(p));
   PITCH_ROWS.forEach((k) => rows[k].sort((a, b) => (b.ppg || 0) - (a.ppg || 0)));
   const shape = [rows.DEF.length, rows.MID.length, rows.FWD.length].join("-");
+  const capP = SQUAD.find((p) => p.n === CAPTAIN);
+  const viceP = SQUAD.find((p) => p.n === VICE);
 
   return (
     <div style={{
@@ -1244,6 +1273,26 @@ function PitchViz() {
           background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.20)",
           borderRadius: 3, padding: "1px 6px", letterSpacing: 0.5,
         }}>{shape}</span>
+
+        {/* de bandkeuze staat er ook uitgeschreven, want een letter op een
+            pasfoto is duidelijk zodra je weet wat hij betekent en niet eerder */}
+        <span style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 7, minWidth: 0 }}>
+          {[[tr.capShort, capP, true], [tr.viceShort, viceP, false]].filter(([, pl]) => pl).map(([mark, pl, isCap]) => (
+            <span key={mark} style={{ display: "flex", alignItems: "center", gap: 4, minWidth: 0 }}>
+              <span style={{
+                width: 14, height: 14, borderRadius: "50%", flexShrink: 0,
+                background: isCap ? T.neon : "rgba(255,255,255,0.90)",
+                color: isCap ? "#04180D" : "#1A0020",
+                fontSize: 8, fontWeight: WEIGHT.bold,
+                display: "flex", alignItems: "center", justifyContent: "center",
+              }}>{mark}</span>
+              <span style={{
+                fontSize: FS.micro, fontWeight: WEIGHT.semibold, color: "rgba(255,255,255,0.82)",
+                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
+              }}>{pl.n}</span>
+            </span>
+          ))}
+        </span>
       </div>
 
       {PITCH_ROWS.map((pos, ri) => (
@@ -1253,7 +1302,7 @@ function PitchViz() {
           position: "relative", zIndex: 1,
         }}>
           {rows[pos].map((p) => (
-            <PitchPlayer key={p.n} p={p} cap={p.n === CAPTAIN} size={42} />
+            <PitchPlayer key={p.n} p={p} cap={p.n === CAPTAIN} vice={p.n === VICE} size={42} />
           ))}
         </div>
       ))}
