@@ -71,39 +71,44 @@ function chipStyle(T, tone = "accent") {
    and only ever sits on a dark surface, pink is the negative signal. */
 const PL = {
   purple: "#38003C", purpleDeep: "#22002A", purpleLift: "#4A0F50",
+  purpleInk: "#12000F", purpleNight: "#080008",
   violet: "#963CFF", green: "#00FF85", cyan: "#04F5FF", pink: "#E90052",
 };
 
+/* Beide thema's zijn bewust laag in helderheid gezet. De lichte variant is geen
+   wit meer maar een gedempt paarsgrijs, de donkere loopt richting zwart. Alleen
+   de accenten blijven op volle sterkte, want die moeten er juist uitspringen
+   tegen een donkere ondergrond. */
 const THEMES = {
   default: {
     id: "default",
-    bg: "#F2F0F5", card: "#FFFFFF", nav: PL.purple,
-    navText: "#FFFFFF", navSub: "rgba(255,255,255,0.60)", navAccent: PL.green,
-    border: "#E2DEE8", borderStrong: "#C6BED0",
-    text: "#1B0021", textSub: "#5F5468", textFaint: "#9C93A6",
-    accent: PL.purple, accent2: PL.violet,
-    accentFaint: "#F6EEF9",
-    neon: PL.green, neonInk: PL.purple, cyan: PL.cyan,
-    gold: "#C9A227",
-    green: "#00874A", red: PL.pink,
-    pitch: `linear-gradient(160deg,${PL.purple} 0%,#2A0030 62%,${PL.purpleDeep} 100%)`,
-    shirt: `linear-gradient(135deg,${PL.green},#00C468)`,
-    shirtInk: PL.purple,
+    bg: "#C3BACC", card: "#D5CDDD", nav: PL.purpleInk,
+    navText: "#F2ECF5", navSub: "rgba(242,236,245,0.55)", navAccent: PL.green,
+    border: "#A79BB2", borderStrong: "#82738F",
+    text: "#12000F", textSub: "#3D3145", textFaint: "#6B5F76",
+    accent: PL.purple, accent2: "#6B1FBF",
+    accentFaint: "#B3A5C0",
+    neon: PL.green, neonInk: PL.purpleInk, cyan: "#0398A1",
+    gold: "#8A6E12",
+    green: "#00633A", red: "#A8003C",
+    pitch: `linear-gradient(160deg,${PL.purple} 0%,${PL.purpleDeep} 58%,${PL.purpleNight} 100%)`,
+    shirt: `linear-gradient(135deg,#00B860,#007A42)`,
+    shirtInk: "#04180D",
   },
   dark: {
     id: "dark",
-    bg: "#170019", card: "#26002C", nav: PL.purpleDeep,
-    navText: "#FFFFFF", navSub: "rgba(255,255,255,0.58)", navAccent: PL.green,
-    border: "#3D1044", borderStrong: PL.green,
-    text: "#F6F1F8", textSub: "#BCAEC4", textFaint: "#877A90",
+    bg: "#070007", card: "#110012", nav: PL.purpleNight,
+    navText: "#EFE6F2", navSub: "rgba(239,230,242,0.50)", navAccent: PL.green,
+    border: "#26062A", borderStrong: "#3A0F40",
+    text: "#EDE4F0", textSub: "#9B8DA4", textFaint: "#645870",
     accent: PL.green, accent2: PL.cyan,
-    accentFaint: "rgba(0,255,133,0.09)",
-    neon: PL.green, neonInk: PL.purpleDeep, cyan: PL.cyan,
-    gold: "#FFC861",
-    green: PL.green, red: "#FF3D77",
-    pitch: `linear-gradient(160deg,${PL.purpleLift} 0%,${PL.purple} 55%,${PL.purpleDeep} 100%)`,
-    shirt: `linear-gradient(135deg,${PL.green},#00C468)`,
-    shirtInk: PL.purpleDeep,
+    accentFaint: "rgba(0,255,133,0.06)",
+    neon: PL.green, neonInk: PL.purpleNight, cyan: PL.cyan,
+    gold: "#D9A33F",
+    green: PL.green, red: "#FF2E6B",
+    pitch: `linear-gradient(160deg,${PL.purpleDeep} 0%,${PL.purpleInk} 55%,${PL.purpleNight} 100%)`,
+    shirt: `linear-gradient(135deg,#00D46E,#008A4A)`,
+    shirtInk: PL.purpleNight,
   },
 };
 
@@ -115,7 +120,8 @@ const LANG = {
     squadTitle: "De selectie", squadSub: "Vijftien spelers, exact 100.0 besteed. Tik op een speler voor de onderbouwing.",
     watchTitle: "In de gaten houden", watchSub: "De vijftien namen die het net niet haalden, met de reden waarom ze tweede keus zijn.",
     colPlayer: "Speler", colClub: "Club", colPos: "Pos", colVal: "Waarde", colXg: "xG", colXa: "xA", colEp: "P/W", colPp: "PPT",
-    xiLbl: "Basis", benchLbl: "Bank", captain: "Aanvoerder", vice: "Reserve-aanvoerder",
+    xiLbl: "Basis", benchLbl: "Bank", benchTitle: "Bank",
+    lineupTitle: "Opstelling", lineupSub: "De basiself, met de bank eronder.", captain: "Aanvoerder", vice: "Reserve-aanvoerder",
     whyPicked: "Waarom deze speler", whyWatch: "Waarom tweede keus",
     ppgLbl: "Punten per duel", ppgSub: "vorig seizoen",
     ppTitle: "PPT staat los van de selectie", ppSub: "Alleen ter informatie", startsLbl: "Basisplaatsen", ownLbl: "Eigendom", epLbl: "vPnt volgens FPL",
@@ -139,7 +145,8 @@ const LANG = {
     squadTitle: "The squad", squadSub: "Fifteen players, exactly 100.0 spent. Tap a player for the reasoning.",
     watchTitle: "Worth watching", watchSub: "The fifteen names that just missed out, with why they are second choice.",
     colPlayer: "Player", colClub: "Club", colPos: "Pos", colVal: "Value", colXg: "xG", colXa: "xA", colEp: "P/M", colPp: "PPT",
-    xiLbl: "Starting", benchLbl: "Bench", captain: "Captain", vice: "Vice-captain",
+    xiLbl: "Starting", benchLbl: "Bench", benchTitle: "Bench",
+    lineupTitle: "Line-up", lineupSub: "The starting eleven, with the bench below.", captain: "Captain", vice: "Vice-captain",
     whyPicked: "Why this player", whyWatch: "Why second choice",
     ppgLbl: "Points per match", ppgSub: "last season",
     ppTitle: "PPT plays no part in the selection", ppSub: "Shown for information only", startsLbl: "Starts", ownLbl: "Ownership", epLbl: "xPts per the FPL API",
@@ -215,7 +222,7 @@ const CREST_PNG = {
   TOT: "data:image/png;base64,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",
 };
 
-const CREST_DIR = "/crests-v11";
+const CREST_DIR = "/crests-v12";
 const BADGE_PATHS = [
   /* the vector file wins wherever it is actually served */
   (code, key) => `${CREST_DIR}/${key}.svg`,
@@ -1146,6 +1153,122 @@ function PlayerTable({ rows, mode, openKey, setOpenKey }) {
   );
 }
 
+/* ── PITCH ──────────────────────────────────────────────────────────────────
+   Rows run forwards at the top down to the keeper, the way the WK2026 app lays
+   its squad out. Each shirt is the round portrait, with the crest tucked at the
+   corner and the armband on the captain. The bench sits under a divider so it
+   reads as outside the pitch rather than another row of it. */
+const PITCH_ROWS = ["FWD", "MID", "DEF", "GK"];
+
+function PitchPlayer({ p, cap, size, sub }) {
+  const T = useTheme();
+  const lang = useLang();
+  const dim = sub ? 0.82 : 1;
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: sub ? 62 : 68, opacity: dim }}>
+      <div style={{ position: "relative", marginBottom: 5 }}>
+        <PlayerPhoto code={p.code} club={p.c} size={size}
+          ring={cap ? T.neon : "rgba(255,255,255,0.55)"} />
+        <span style={{
+          position: "absolute", bottom: -2, right: -3, fontSize: sub ? 10 : 12, lineHeight: 1,
+          filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.55))",
+        }}><Crest club={p.c} /></span>
+        {cap && (
+          <span style={{
+            position: "absolute", top: -3, left: -3, width: 16, height: 16, borderRadius: "50%",
+            background: T.neon, color: "#04180D", fontSize: 9, fontWeight: WEIGHT.bold,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            boxShadow: "0 1px 3px rgba(0,0,0,0.5)",
+          }}>{lang === "nl" ? "A" : "C"}</span>
+        )}
+      </div>
+      <div style={{
+        fontSize: FS.micro, color: "#FFFFFF", textAlign: "center",
+        fontWeight: WEIGHT.medium, lineHeight: 1.2,
+        maxWidth: "100%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
+      }}>{p.n}</div>
+      <div style={{ fontSize: FS.micro, color: "rgba(255,255,255,0.55)", lineHeight: 1.3, marginTop: 1 }}>
+        {p.ppg ? p.ppg.toFixed(1) : "\u2013"}
+      </div>
+    </div>
+  );
+}
+
+function PitchViz() {
+  const T = useTheme();
+  const tr = useT();
+  const xi = SQUAD.filter((p) => XI_SET.has(p.n));
+  const bench = SQUAD.filter((p) => !XI_SET.has(p.n))
+    .sort((a, b) => (a.pos === "GK" ? 1 : 0) - (b.pos === "GK" ? 1 : 0) || (b.ppg || 0) - (a.ppg || 0));
+  const rows = { GK: [], DEF: [], MID: [], FWD: [] };
+  xi.forEach((p) => rows[p.pos].push(p));
+  PITCH_ROWS.forEach((k) => rows[k].sort((a, b) => (b.ppg || 0) - (a.ppg || 0)));
+  const shape = [rows.DEF.length, rows.MID.length, rows.FWD.length].join("-");
+
+  return (
+    <div style={{
+      background: T.pitch, borderRadius: 8, padding: "16px 8px 14px",
+      position: "relative", overflow: "hidden", borderLeft: `4px solid ${T.neon}`,
+    }}>
+      {/* de veldmarkering, puur decoratief */}
+      <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
+        <div style={{ position: "absolute", inset: 8, border: "1px solid rgba(255,255,255,0.07)", borderRadius: 6 }} />
+        <div style={{ position: "absolute", top: "50%", left: 8, right: 8, height: 1, background: "rgba(255,255,255,0.07)" }} />
+        <div style={{
+          position: "absolute", top: "50%", left: "50%", width: 68, height: 68,
+          transform: "translate(-50%,-50%)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "50%",
+        }} />
+        <div style={{
+          position: "absolute", bottom: 8, left: "50%", width: 108, height: 34,
+          transform: "translateX(-50%)", border: "1px solid rgba(255,255,255,0.07)",
+          borderTopLeftRadius: 3, borderTopRightRadius: 3, borderBottom: "none",
+        }} />
+      </div>
+
+      <div style={{
+        position: "relative", zIndex: 1, display: "flex", alignItems: "center",
+        gap: 8, padding: "0 6px", marginBottom: 12,
+      }}>
+        <span style={{
+          fontSize: FS.micro, fontWeight: WEIGHT.bold, letterSpacing: 1.4,
+          textTransform: "uppercase", color: T.neon,
+        }}>{tr.lineupTitle}</span>
+        <span style={{
+          fontSize: FS.micro, fontWeight: WEIGHT.bold, color: "#FFFFFF",
+          background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.20)",
+          borderRadius: 3, padding: "1px 6px", letterSpacing: 0.5,
+        }}>{shape}</span>
+      </div>
+
+      {PITCH_ROWS.map((pos, ri) => (
+        <div key={pos} style={{
+          display: "flex", justifyContent: "center", gap: 4, flexWrap: "wrap",
+          marginBottom: ri < PITCH_ROWS.length - 1 ? 13 : 0,
+          position: "relative", zIndex: 1,
+        }}>
+          {rows[pos].map((p) => (
+            <PitchPlayer key={p.n} p={p} cap={p.n === CAPTAIN} size={42} />
+          ))}
+        </div>
+      ))}
+
+      <div style={{
+        marginTop: 15, paddingTop: 12, position: "relative", zIndex: 1,
+        borderTop: "1px solid rgba(255,255,255,0.13)",
+      }}>
+        <div style={{
+          fontSize: FS.micro, fontWeight: WEIGHT.bold, letterSpacing: 1.4,
+          textTransform: "uppercase", color: "rgba(255,255,255,0.50)",
+          textAlign: "center", marginBottom: 10,
+        }}>{tr.benchTitle}</div>
+        <div style={{ display: "flex", justifyContent: "center", gap: 4, flexWrap: "wrap" }}>
+          {bench.map((p) => <PitchPlayer key={p.n} p={p} size={34} sub />)}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── TEAM TAB ───────────────────────────────────────────────────────────── */
 function TeamTab() {
   const T = useTheme();
@@ -1182,6 +1305,8 @@ function TeamTab() {
           <span style={{ fontSize: FS.small, fontWeight: WEIGHT.bold, color: T.neon }}>{cap.ppg.toFixed(1)}</span>
         </div>
       </div>
+
+      <div style={{ marginTop: 12 }}><PitchViz /></div>
 
       <PSection label={tr.squadTitle} sub={tr.squadSub} />
       <div style={{ marginTop: -4 }}>
