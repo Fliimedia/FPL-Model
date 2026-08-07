@@ -215,7 +215,7 @@ const CREST_PNG = {
   TOT: "data:image/png;base64,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",
 };
 
-const CREST_DIR = "/crests-v10";
+const CREST_DIR = "/crests-v11";
 const BADGE_PATHS = [
   /* the vector file wins wherever it is actually served */
   (code, key) => `${CREST_DIR}/${key}.svg`,
@@ -838,20 +838,23 @@ const PHOTO_PATHS = [
   (code) => `https://resources.premierleague.com/premierleague/photos/players/110x140/p${code}.png`,
 ];
 
-function PlayerPhoto({ code, club, size = 54 }) {
+/* Always a circle, with a thin ring, the way the portraits sit in the WK2026
+   app. Press photos are shot as tall portraits, so the image is scaled up and
+   pinned to the top of the circle: that keeps the head centred instead of
+   cropping the face out at the sides. */
+function PlayerPhoto({ code, club, size = 56, ring }) {
   const T = useTheme();
   const [step, setStep] = useState(0);
-  const h = Math.round(size * 1.27);
   const frame = {
-    width: size, height: h, borderRadius: 4, flexShrink: 0,
-    background: T.bg, border: `1px solid ${T.border}`,
+    width: size, height: size, borderRadius: "50%", flexShrink: 0,
+    background: T.bg, border: `2px solid ${ring || T.border}`,
     display: "flex", alignItems: "center", justifyContent: "center",
-    overflow: "hidden",
+    overflow: "hidden", position: "relative",
   };
   if (!code || step >= PHOTO_PATHS.length) {
     return (
       <div style={frame}>
-        <span style={{ fontSize: Math.round(size * 0.5), lineHeight: 1, opacity: 0.75 }}>
+        <span style={{ fontSize: Math.round(size * 0.52), lineHeight: 1, opacity: 0.8 }}>
           <Crest club={club} />
         </span>
       </div>
@@ -861,7 +864,10 @@ function PlayerPhoto({ code, club, size = 54 }) {
     <div style={frame}>
       <img key={step} src={PHOTO_PATHS[step](code)} alt="" loading="lazy"
         onError={() => setStep(step + 1)}
-        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
+        style={{
+          width: "128%", height: "128%", objectFit: "cover",
+          objectPosition: "top center", transform: "translateY(-2%)",
+        }} />
     </div>
   );
 }
@@ -1169,7 +1175,7 @@ function TeamTab() {
           ))}
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 11, paddingTop: 10, borderTop: "1px solid rgba(255,255,255,0.14)" }}>
-          <PlayerPhoto code={cap.code} club={cap.c} size={38} />
+          <PlayerPhoto code={cap.code} club={cap.c} size={40} ring={T.neon} />
           <span style={{ fontSize: FS.micro, fontWeight: WEIGHT.bold, letterSpacing: 1, textTransform: "uppercase", color: "rgba(255,255,255,0.55)" }}>{tr.captain}</span>
           <span style={{ fontSize: 15, lineHeight: 1 }}><Crest club={cap.c} /></span>
           <span style={{ fontSize: FS.body, fontWeight: WEIGHT.bold, color: "#FFFFFF", flex: 1 }}>{cap.n}</span>
